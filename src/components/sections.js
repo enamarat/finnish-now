@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import Section from './section.js';
 import greetings from '../tasks/greetings.js';
 import colors from '../tasks/colors.js';
-import Section from './section.js';
+import persons from '../tasks/persons.js';
+import animals from '../tasks/animals.js';
 
 
 class Sections extends Component {
@@ -10,6 +12,8 @@ class Sections extends Component {
         this.state = {
             greetings: greetings,
             colors: colors,
+            persons: persons,
+            animals: animals,
             currentSection: null
         };
     }

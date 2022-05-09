@@ -27,4 +27,4 @@ export default [
         english: "green",
         finnish: "vihreä"
     },
-]
+];
