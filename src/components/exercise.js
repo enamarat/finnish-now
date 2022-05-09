@@ -7,7 +7,10 @@ class Exercise extends Component {
             userInput: "",
             currentExercise: 0,
             correctAnswers: 0,
-            answerChecked: false
+            answerChecked: false,
+            tasks: this.props.tasks,
+            answerStatus: 'Correct!',
+            lastExercise: false
         };
     }
 
@@ -21,18 +24,34 @@ class Exercise extends Component {
     }
 
     changeExercise = () => {
-        if (this.state.currentExercise < this.props.tasks.length-1) {
+        if (this.state.currentExercise < this.state.tasks.length-1) {
             this.setState({currentExercise: this.state.currentExercise + 1});
             this.setState({answerChecked: false});
-        } else {
-            console.log("Stop!");
+            this.setState({userInput: ""});
+            if (this.state.currentExercise == this.state.tasks.length-2) {
+                this.setState({lastExercise: true});
+            }
         }
     }
 
     checkExercise = () => {
-        if (this.state.currentExercise < this.props.tasks.length-1) {
-            this.setState({answerChecked: true});
+        const currentTask = this.state.tasks[this.state.currentExercise].finnish.toLowerCase().split(" ");
+        const userAnswer = this.state.userInput.toLowerCase().split(" ");
+        let correctAnswer = true;
+
+        for (let i = 0; i < currentTask.length; i++) {
+            if (currentTask[i] != userAnswer[i]) {
+                correctAnswer = false;
+            }
         }
+
+        if (correctAnswer == true) {
+            this.setState({answerStatus: 'Correct!'});
+        } else {
+            this.setState({answerStatus: 'Wrong!'});
+        }
+
+        this.setState({answerChecked: true});
     }
 
 
@@ -40,15 +59,18 @@ class Exercise extends Component {
      return(
         <div className='verticalContainer'>
             <h2 className="sectionTitle">{this.props.currentSection.toUpperCase()}</h2>
-            <p className="exerciseText">{this.props.tasks[this.state.currentExercise].english}</p>
+            <p className="exerciseText">{this.state.tasks[this.state.currentExercise].english}</p>
             <textarea value={this.state.userInput} className="userInput" onChange={this.handleChange}></textarea>
             <div className="specialCharsContainer">
                 <button onClick={this.enterSpecialCharacter} className="specialCharButton">ä</button>
                 <button onClick={this.enterSpecialCharacter} className="specialCharButton">ö</button>
             </div>
-            <button onClick={this.checkExercise}>Check</button>
-            {this.state.answerChecked ? <button onClick={this.changeExercise}>Next</button> : null}
+            {!this.state.answerChecked ? <button onClick={this.checkExercise}>Check</button> : null}
+            {this.state.answerChecked && !this.state.lastExercise ? <button onClick={this.changeExercise}>Next</button> : null}
             <button onClick={this.props.returnToSections}>Return</button>
+            <div className={`statusAnswerDiv ${this.state.answerStatus == 'Correct!' ? 'statusCorrect' : 'statusWrong'} ${this.state.answerChecked ? 'statusAnswerDivTrans' : null}`}>
+                <h2>{this.state.answerStatus}</h2>
+            </div>
         </div>
      );
     }

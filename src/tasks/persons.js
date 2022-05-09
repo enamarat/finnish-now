@@ -31,4 +31,28 @@ export default [
         english: "baby",
         finnish: "vauva"
     },
+    {
+        english: "girl",
+        finnish: "tyttö"
+    },
+    {
+        english: "boy",
+        finnish: "poika"
+    },
+    {
+        english: "person",
+        finnish: "ihminen"
+    },
+    {
+        english: "friend",
+        finnish: "ystävä"
+    },
+    {
+        english: "mister",
+        finnish: "herra"
+    },
+    {
+        english: "missis",
+        finnish: "rouva"
+    },
 ];

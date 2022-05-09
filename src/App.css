@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -15,7 +15,8 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 25vh;
+  /*min-height: 10vh;*/
+  height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,6 +34,8 @@
   flex-direction: column;
   align-items: center;
   margin-top: 1em;
+  overflow: hidden;
+  position: relative;
 }
 
 /*** Input ***/
@@ -95,6 +98,28 @@ button:active {
   margin-bottom: 0.5em;
   display: flex;
   justify-content: space-between;
+}
+
+/*** exercise ***/
+.statusAnswerDiv {
+  padding: 5px;
+  border: 2px solid blue;
+  position: absolute;
+  right: -110px;
+  -webkit-transition: right 2s, -webkit-transform 2s;
+  transition: right 2s, transform 2s;
+}
+
+.statusCorrect {
+  background-color: lightgreen;
+}
+
+.statusWrong {
+  background-color: lightcoral;
+}
+
+.statusAnswerDivTrans {
+  right: 20px;
 }
 
 @keyframes App-logo-spin {

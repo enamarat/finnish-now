@@ -27,4 +27,8 @@ export default [
         english: "bear",
         finnish: "karhu"
     },
+    {
+        english: "lemmikki",
+        finnish: "pet"
+    },
 ];
