@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Section from './section.js';
+import Exercise from './exercise.js';
 import greetings from '../tasks/greetings.js';
 import colors from '../tasks/colors.js';
 import persons from '../tasks/persons.js';
@@ -24,9 +24,7 @@ class Sections extends Component {
 
 
     showSection = (event) => {
-        console.log(event.target.textContent.toLowerCase());
         const section = event.target.textContent.toLowerCase();
-        console.log(this.state[section]);
         this.setState({currentSection: section});
     }
 
@@ -42,10 +40,10 @@ class Sections extends Component {
                 </div>
              );
         } else {
-            return <Section 
-                    returnToSections={this.returnToSections}
-                    currentSection={this.state.currentSection}
-                    tasks={this.state[this.state.currentSection]}
+            return <Exercise 
+                        returnToSections={this.returnToSections}
+                        currentSection={this.state.currentSection}
+                        tasks={this.state[this.state.currentSection]}
                    />;
         }
     }

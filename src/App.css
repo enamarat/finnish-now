@@ -55,6 +55,11 @@ p {
   margin-top: 0;
 }
 
+.exerciseText {
+  color: tomato;
+  font-weight: bold;
+}
+
 /*** Buttons ***/
 button {
   color: blue;
@@ -71,6 +76,10 @@ button {
 button:hover {
   color: white;
   background-color: blue;
+}
+
+button:active {
+  background-color: darkblue;
 }
 
 .specialCharButton {
