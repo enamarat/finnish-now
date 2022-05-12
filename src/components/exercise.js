@@ -36,7 +36,8 @@ class Exercise extends Component {
 
     checkExercise = () => {
         const currentTask = this.state.tasks[this.state.currentExercise].finnish.toLowerCase().split(" ");
-        const userAnswer = this.state.userInput.toLowerCase().split(" ");
+        let userAnswer = this.state.userInput.toLowerCase();
+        userAnswer = userAnswer.replace(/\r?\n|\r/g, "").replace(/\s{2,}/g, " ").split(" ");
         let correctAnswer = true;
 
         for (let i = 0; i < currentTask.length; i++) {
@@ -50,8 +51,15 @@ class Exercise extends Component {
         } else {
             this.setState({answerStatus: 'Wrong!'});
         }
-
         this.setState({answerChecked: true});
+    }
+
+    handleKeyPress = (event) => {
+        if (event.key == 'Enter' && !this.state.answerChecked) {
+           this.checkExercise();
+        } else  if (event.key == 'Enter' && this.state.answerChecked) {
+            this.changeExercise();
+        }
     }
 
 
@@ -60,7 +68,7 @@ class Exercise extends Component {
         <div className='verticalContainer'>
             <h2 className="sectionTitle">{this.props.currentSection.toUpperCase()}</h2>
             <p className="exerciseText">{this.state.tasks[this.state.currentExercise].english}</p>
-            <textarea value={this.state.userInput} className="userInput" onChange={this.handleChange}></textarea>
+            <textarea value={this.state.userInput} className="userInput" onChange={this.handleChange} onKeyPress={this.handleKeyPress}></textarea>
             <div className="specialCharsContainer">
                 <button onClick={this.enterSpecialCharacter} className="specialCharButton">ä</button>
                 <button onClick={this.enterSpecialCharacter} className="specialCharButton">ö</button>
