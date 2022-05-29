@@ -23,5 +23,9 @@ export default [
         english: "cheers",
         finnish: "kippis"
     },
+    {
+        english: "congratulations",
+        finnish: "paljon onnea"
+    },
 ];
     

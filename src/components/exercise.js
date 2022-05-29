@@ -29,11 +29,12 @@ class Exercise extends Component {
             this.setState({currentExercise: this.state.currentExercise + 1});
             this.setState({answerChecked: false});
             this.setState({userInput: ""});
-            if (this.state.currentExercise == this.state.tasks.length-2) {
-                this.setState({lastExercise: true});
-            }
+        } else {
+            this.setState({lastExercise: true});
+            this.setState({finalScreen: true});
         }
     }
+
 
     checkExercise = () => {
         const currentTask = this.state.tasks[this.state.currentExercise].finnish.toLowerCase().split(" ");
@@ -56,11 +57,8 @@ class Exercise extends Component {
             this.setState({answerStatus: 'Wrong!'});
         }
         this.setState({answerChecked: true});
-    
-        if (this.state.currentExercise == this.state.tasks.length-1) {
-            this.setState({finalScreen: true});
-        }
     }
+
 
     handleKeyPress = (event) => {
         if (event.key == 'Enter' && !this.state.answerChecked) {
