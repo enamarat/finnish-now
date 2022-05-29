@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/finnish-now/static/css/main.ff35f119.css",
-    "main.js": "/finnish-now/static/js/main.7ebad349.js",
+    "main.js": "/finnish-now/static/js/main.6c9c76f9.js",
     "static/js/787.c1f326ff.chunk.js": "/finnish-now/static/js/787.c1f326ff.chunk.js",
     "static/media/gear.png": "/finnish-now/static/media/gear.59d9b7a60e0deca48d32.png",
     "index.html": "/finnish-now/index.html",
     "main.ff35f119.css.map": "/finnish-now/static/css/main.ff35f119.css.map",
-    "main.7ebad349.js.map": "/finnish-now/static/js/main.7ebad349.js.map",
+    "main.6c9c76f9.js.map": "/finnish-now/static/js/main.6c9c76f9.js.map",
     "787.c1f326ff.chunk.js.map": "/finnish-now/static/js/787.c1f326ff.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ff35f119.css",
-    "static/js/main.7ebad349.js"
+    "static/js/main.6c9c76f9.js"
   ]
 }
