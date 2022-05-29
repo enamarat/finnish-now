@@ -2,20 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 10vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/*** Header ***/
 .App-header {
-  background-color: #282c34;
-  /*min-height: 10vh;*/
+  background-color: #220a5c;
   height: 15vh;
   display: flex;
   flex-direction: column;
@@ -25,8 +14,28 @@
   color: white;
 }
 
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  position: absolute;
+  right: 10px;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.flag {
+  width: 70px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .verticalContainer {
@@ -66,8 +75,22 @@ p {
 .finalScore {
   font-size: 2em;
   font-weight: bold;
-  color: green;
+  color: #220a5c;
   margin-bottom: 0.2em;
+}
+
+.frame {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px;
+  border: 4px solid #220a5c;
+  color: #fff;
+  background-color: #220a5c;
+  margin-bottom: 0.2em;
+}
+
+.hint {
+  color: tomato;
 }
 
 /*** Buttons ***/

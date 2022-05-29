@@ -4,6 +4,7 @@ import greetings from '../tasks/greetings.js';
 import colors from '../tasks/colors.js';
 import persons from '../tasks/persons.js';
 import animals from '../tasks/animals.js';
+import countries from '../tasks/countries.js';
 
 
 class Sections extends Component {
@@ -14,6 +15,7 @@ class Sections extends Component {
             colors: colors,
             persons: persons,
             animals: animals,
+            countries: countries,
             currentSection: null
         };
     }
@@ -37,6 +39,7 @@ class Sections extends Component {
                     <button onClick={this.showSection}>Colors</button>
                     <button onClick={this.showSection}>Persons</button>
                     <button onClick={this.showSection}>Animals</button>
+                    <button onClick={this.showSection}>Countries</button>
                 </div>
              );
         } else {

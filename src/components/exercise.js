@@ -75,7 +75,7 @@ class Exercise extends Component {
      if (this.state.finalScreen == true) {
        return (
         <div className='verticalContainer'>
-            <p className='finalScore'>{this.state.correctAnswers}/{this.state.tasks.length}</p>
+            <p className='frame'>{this.state.correctAnswers}/{this.state.tasks.length}</p>
             {this.state.correctAnswers == 0 ? <p className='finalScore'>Try again!</p> : null}
             {this.state.correctAnswers == this.state.tasks.length ? <p className='finalScore'>Amazing!</p> : null}
             {this.state.correctAnswers < this.state.tasks.length && this.state.correctAnswers > 0 ? <p className='finalScore'>Nice try!</p> : null}
@@ -88,6 +88,7 @@ class Exercise extends Component {
                 <h2 className="sectionTitle">{this.props.currentSection.toUpperCase()}</h2>
                 <p className="exerciseText">{this.state.tasks[this.state.currentExercise].english}</p>
                 <textarea value={this.state.userInput} className="userInput" onChange={this.handleChange} onKeyPress={this.handleKeyPress}></textarea>
+                {this.state.answerStatus == 'Wrong!' && this.state.answerChecked ? <p className='hint'>{this.state.tasks[this.state.currentExercise].finnish}</p> : <p></p>}
                 <div className="specialCharsContainer">
                     <button onClick={this.enterSpecialCharacter} className="specialCharButton">ä</button>
                     <button onClick={this.enterSpecialCharacter} className="specialCharButton">ö</button>

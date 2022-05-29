@@ -107,4 +107,8 @@ export default [
         english: "wizard",
         finnish: "velho"
     },
+    {
+        english: "kind",
+        finnish: "kiltti"
+    },
 ];
